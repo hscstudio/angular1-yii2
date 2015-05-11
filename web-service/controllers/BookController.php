@@ -14,11 +14,15 @@ class BookController extends ActiveController
             'corsFilter' => [
                 'class' => \yii\filters\Cors::className(),
             ],
-            'contentNegotiator'=>[
+            /*
+			// This only optional force set response
+			// because yii can autodetect header
+			'contentNegotiator'=>[
                 'formats'=>[
                     'text/html'=>\yii\web\Response::FORMAT_JSON
                 ]
             ]
+			*/
         ]);
     }
 }
