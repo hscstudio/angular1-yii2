@@ -16,12 +16,27 @@ You love with this arrangement ?
 #### Download Twitter Bootstrap
 Download this library from http://getbootstrap.com/, and extract to folder assets
 
-Sehingga di dalam folder assets terdapat folder twitter-bootstrap dan kemudian didalam folder twitter bootstrap terdapat tiga folder lagi yaitu js, css dan font
+so that the assets contained in the folder twitter-bootstrap folder inside the folder and then there are three folders twitter bootstrap again that js , css and fonts
 + assets
 + + twitter-bootstrap
 + + + js
 + + + css
 + + + font
+
+#### Download AngularJs
+Download this library from http://angularjs.org/, and extract to folder assets
+
+so that the assets contained in the folder angular and all the material from the angular library is placed in this folder
++ assets
++ + twitter-bootstrap
++ + angular
++ + + angular.js
++ + + angular.min.js
++ + + ...
++ + + etc
+
+#### Connecting AngularJs & Twitter Bootstrap with HTML
+In order to use angularjs and twitter bootstrap, so we need to create an html file html file which will menginclude file of the two libraries.
 
 ### Technology Behind Scene
 
