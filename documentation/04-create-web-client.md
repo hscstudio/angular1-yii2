@@ -56,8 +56,8 @@ Important thing of this code is in div tag id container..
 ```
 <div ng-view></div>, in this div will placed the dynamic content from other file or page view.
 
-### Create Main Script
-The main script is intended to controll other javascript script. We named him with [app.js](../web-client/app.js) and placed in the root of the web - client
+### Create Main Module & Sub Module
+The main module is intended to controll other javascript script for example sub module. We named him with [app.js](../web-client/app.js) and placed in the root of the web - client
 ```js
 'use strict';
 // adjust to the Your url of web service
@@ -77,14 +77,75 @@ spaApp.config(['$routeProvider', function($routeProvider) {
 ```
 Default route is /site/index, this route will handled by sub module "spaApp.site"
 
-3.	Create file site.js in folder controller
-This file is controller to handle site views, maybe in Yii is like as SiteController.php
-This file handle routing of angular app for sub module site. Every route have  may templateUrl and controller.
-TemplateUrl is other file html as partial content
-Controller is name of controller that do some process, for example set variable in template. 
+### Create Definition of Sub Module
+After create sub module spaApp.site, let us define what that sub module do. Create file [site.js](../web-client/controllers/site.js) in folder controllers. 
+```js
+'use strict';
+spaApp_site.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+	.when('/site/index', {
+		templateUrl: 'views/site/index.html',
+		controller: 'index'
+	})
+	.when('/site/about', {
+		templateUrl: 'views/site/about.html',
+		controller: 'about'
+	})
+	.when('/site/contact', {
+		templateUrl: 'views/site/contact.html',
+		controller: 'contact'
+	})
+	.otherwise({
+		redirectTo: '/site/index'
+	});
+}])
+.controller('index', ['$scope', '$http', function($scope,$http) {
+	// create a message to display in our view
+	$scope.message = 'Everyone come and see how good I look!';
+}])
+.controller('about', ['$scope', '$http', function($scope,$http) {
+	// create a message to display in our view
+	$scope.message = 'Look! I am an about page.';
+}])
+.controller('contact', ['$scope', '$http', function($scope,$http) {
+	// create a message to display in our view
+	$scope.message = 'Contact us! JK. This is just a demo.';
+}]);
+```
+This file is sub module to handle site views, maybe in Yii is like as SiteController.php. Please see this code..
+```js
+spaApp_site.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+	.when('/site/index', {
+		templateUrl: 'views/site/index.html',
+		controller: 'index'
+	})
+	.when('/site/about', {
+		templateUrl: 'views/site/about.html',
+		controller: 'about'
+	})
+	.when('/site/contact', {
+		templateUrl: 'views/site/contact.html',
+		controller: 'contact'
+	})
+	.otherwise({
+		redirectTo: '/site/index'
+	});
+}])
+```
+This is routing configuration of this sub module only. Every route have may templateUrl and controller. If You dont understand, I will analogize with Yii.
+- TemplateUrl is other file html as partial content in Yii maybe same with views
+- Controller is name of controller that do some process, for example set variable in template. in Yii maybe same with function of class controllers
+```js
+.controller('index', ['$scope', '$http', function($scope,$http) {
+	// create a message to display in our view
+	$scope.message = 'Everyone come and see how good I look!';
+}])
+```
+$scope is scope that can be handled by the angular app in this case is all the tags under the tag which is marked with ng - app <html ng-app="spaApp">
+
 $scope.message, message is variabel in file templateUrl, let say views/site/index.html, point to {{message}}
  
-If You Yiiers, Sub module in angular maybe is like as Controller in Yii, and .controller in angular is like as function of controllers in Yii.
 4.	Include app.js in index.html
  
 Okey, after it then create views
