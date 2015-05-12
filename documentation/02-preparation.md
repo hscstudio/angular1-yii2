@@ -3,11 +3,14 @@
 ### For Web Client
 create a folder on the web - client web - accessible folder ( eg htdocs , public_html , www , etc. ) and then inside the folder again make four sub folder namely assets , controllers , models, views
 
-This folder structure is a folder structure of our client web application
+This folder structure is a folder structure of our client web application. Why is structurally similar to the structure of Yii ? yes , I deliberately made ​​it resemble Yii where you can easily understand it . Interesting isn't it ?
 
-So, it will be two applications:
-- 1.	Web Client Application
-- 2.	Web Service Application
+Well , I will explain the function of each folder:
+-	Assets folder for core angularJs and TwitterBootstrap, 
+-	Controllers folder for javascript controller of angularJs
+-	Models folders for services, connecting to Restful CRUD URL Yii 2.0
+-	Views folder for partial page, is like views in Yii 
+
 
 ### Technology Behind Scene
 
