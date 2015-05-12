@@ -7,7 +7,9 @@ So, it will be two applications:
 - 1.	Web Client Application
 - 2.	Web Service Application
 
-### Technology Behind Scene
+It is recommended that you develop your RESTful APIs as a separate application, different from your Web front end and back end for easier maintenance
+
+### Technology Behind The Scene
 
 #### For web client app
 ![](images/htmljscss.png)<br>
