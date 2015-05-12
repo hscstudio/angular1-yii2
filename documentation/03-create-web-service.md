@@ -116,7 +116,11 @@ To let the API accept input data in JSON format, configure the parsers property 
     ]
 ]
 ```
-> Info: The above configuration is optional. Without the above configuration, the API would only recognize application/x-www-form-urlencoded and multipart/form-data input formats.
+Info: The above configuration is optional. Without the above configuration, the API would only recognize application/x-www-form-urlencoded and multipart/form-data input formats.
+
+
+
+---
 
 > *** Done ***<br>
 > [Back To Index](index.md) <br>
