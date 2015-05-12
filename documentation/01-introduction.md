@@ -27,4 +27,4 @@ This tutorial use PHP and MySQL.
 ![](images/yii.png)<br>
 
 *** Done ***<br>
-[Back To Index](index.md) | [Preparation](02-preparation.md)
+[Back To Index](index.md) | [02. Preparation](02-preparation.md)
