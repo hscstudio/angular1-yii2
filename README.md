@@ -5,8 +5,8 @@
 This is demo and tutorial about developing AngularJS 1.3.15 for web client and Yii 2.04 for web service.
 
 ## Version
-0.1 (Alpha - 11/05/2015)
-0.2 (Beta - 12/05/2015) Have reviewed by @samdark
+- 0.1 (Alpha - 11/05/2015)
+- 0.2 (Beta - 12/05/2015)
 
 ## Getting Started
 ### Installations
