@@ -1,7 +1,9 @@
-## Introduction
+## Prepare Your Weapons
 
-### Open Your Mind
-I will show You about How To Create Single Page Application (SPA) in minutes with using AngularJs and Yii Framework 2.0. This client server web application will simulate a Create Read Update Delete (CRUD) data processing. Where user interface of this application will full control by AngularJs, then data will provide by Yii Framework 2.0 as web services.
+### For Web Client
+create a folder on the web - client web - accessible folder ( eg htdocs , public_html , www , etc. ) and then inside the folder again make four sub folder namely assets , controllers , models, views
+
+This folder structure is a folder structure of our client web application
 
 So, it will be two applications:
 - 1.	Web Client Application
