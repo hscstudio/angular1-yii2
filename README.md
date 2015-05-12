@@ -1,5 +1,5 @@
 ## How To Create Single Page Application in minutes! <br> with AngularJs 1.3 and Yii 2.0
-![](images/angularjsyii.png)
+![](documentation/images/angularjsyii.png)
 
 ## Introduction
 This is demo and tutorial about developing AngularJS 1.3.15 for web client and Yii 2.04 for web service.
@@ -34,7 +34,7 @@ Only set variabel serviceBase in file web-client\app.js
 
 ## Development
 Want to contribute? Great!
-[click here]()
+[click here](documentation/index.md)
 
 ## Todo's
  - Bugfix
