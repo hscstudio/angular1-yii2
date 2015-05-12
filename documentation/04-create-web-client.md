@@ -120,14 +120,8 @@ spaApp_site.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'views/site/index.html',
 		controller: 'index'
 	})
-	.when('/site/about', {
-		templateUrl: 'views/site/about.html',
-		controller: 'about'
-	})
-	.when('/site/contact', {
-		templateUrl: 'views/site/contact.html',
-		controller: 'contact'
-	})
+	...
+	...
 	.otherwise({
 		redirectTo: '/site/index'
 	});
@@ -136,6 +130,7 @@ spaApp_site.config(['$routeProvider', function($routeProvider) {
 This is routing configuration of this sub module only. Every route have may templateUrl and controller. If You dont understand, I will analogize with Yii.
 - TemplateUrl is other file html as partial content in Yii maybe same with views
 - Controller is name of controller that do some process, for example set variable in template. in Yii maybe same with function of class controllers
+if all routing is not met then it will be executed otherwise
 ```js
 .controller('index', ['$scope', '$http', function($scope,$http) {
 	// create a message to display in our view
@@ -146,15 +141,46 @@ $scope is scope that can be handled by the angular app in this case is all the t
 
 $scope.message, message is variabel in file templateUrl, let say views/site/index.html, point to {{message}}
  
-4.	Include app.js in index.html
+### Include Main Module and Sub Module
+After create main module app.js and sub module site.js, we must include it in entry script of app [index.html](../web-client/index.html)
+```html
+  <script src="assets/angular/angular-animate.min.js"></script>
+  <!-- Include this js -->
+  <script src="app.js"></script>
+  <script src="controllers/site.js"></script>
+</body>
+```
+### Create Template File
+Okey, after it then create template file that pointed by controller, okey create all file in [views](../web-client/views/) folder
+- Create [site/index.html](../web-client/views/site/index.html)
+```html
+<div class="jumbotron text-center">
+	<h1>Home Page</h1>
+	
+	<p>{{ message }}</p>
+</div>
+```
+- Create [site/contact.html](../web-client/views/site/contact.html)
+```html
+<div class="jumbotron text-center">
+	<h1>Contact Page</h1>
+	
+	<p>{{ message }}</p>
+</div>
+```
+- Create [site/about.html](../web-client/views/site/about.html)
+```html
+<div class="jumbotron text-center">
+	<h1>About Page</h1>
+	
+	<p>{{ message }}</p>
+</div>
+```
+This is only simple example of views :)
  
-Okey, after it then create views
-5.	Create views/site/index.html, views/site/contact.html, views/site/about.html
-This is only example
- 
- 
- 
-6.	Testing Your Angular App
+### Testing Your Angular App Now
+[http://localhost/web-client](http://localhost/web-client)<br>
+![](images/testing1.png)
  
 7.	Modify app.js
 Add js global varabel serviceBase that refer to Your Yii 2 web service, then add sub module spaApp.book
