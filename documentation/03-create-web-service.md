@@ -118,7 +118,24 @@ To let the API accept input data in JSON format, configure the parsers property 
 ```
 Info: The above configuration is optional. Without the above configuration, the API would only recognize application/x-www-form-urlencoded and multipart/form-data input formats.
 
+#### Testing in Your Browser Now!
+With the above minimal amount of effort, you have already finished your task of creating the RESTful APIs for accessing the book data. The APIs you have created include:
 
+GET /books: list all books page by page;
+HEAD /books: show the overview information of book listing;
+POST /books: create a new book;
+GET /books/123: return the details of the book 123;
+HEAD /books/123: show the overview information of book 123;
+PATCH /books/123 and PUT /books/123: update the book 123;
+DELETE /books/123: delete the book 123;
+OPTIONS /books: show the supported verbs regarding endpoint /books;
+OPTIONS /books/123: show the supported verbs regarding endpoint /books/123.
+
+Info: Yii will automatically pluralize controller names for use in endpoints. You can configure this using the yii\rest\UrlRule::$pluralize-property.
+
+Tip: You may also access your APIs via Web browser by entering the URL http://localhost/web-service/web/books. However, you may need some browser plugins to send specific request headers. for example: I use Postman Chrome Extension
+
+![](images/postman.png)
 
 ---
 
