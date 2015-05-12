@@ -47,5 +47,5 @@ Want to contribute? Great!
 Free open source
 
 ## Our Team
-- [Hafid Mukhlasin](http://www.hafidmukhlasin.com) - Project Leader / Indonesian Yii Programmer
+- [Hafid Mukhlasin](http://www.hafidmukhlasin.com) - Project Founder / Indonesian Yii Programmer
 
