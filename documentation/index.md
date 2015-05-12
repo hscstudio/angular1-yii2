@@ -1,9 +1,9 @@
 How To Create Single Page Application in minutes! with AngularJs 1.3 and Yii 2.0
 ---
-[![](images/angularjsyii.png)]
+![](images/angularjsyii.png)
 
 Documents
--------------
+---
 
 StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
 
