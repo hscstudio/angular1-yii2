@@ -10,14 +10,14 @@ So, it will be two applications:
 ### Technology Behind Scene
 
 #### For web client app
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. 
+This tutorial use 3 web standard language, they are HTML, JS, and CSS. <br>
 ![](images/htmljscss.png)
-- AngularJs 1.3 as Javascript Framework and 
+- AngularJs 1.3 as Javascript Framework and <br>
 ![](images/angularjs.png)
-- Twitter Bootstrap 3 as CSS Framework.
+- Twitter Bootstrap 3 as CSS Framework.<br>
 ![](images/twitter_bootstrap.png)
 
 #### For web service 
 This tutorial use PHP and MySQL. 
-- Yii Framework 2.0 as PHP Framework
+- Yii Framework 2.0 as PHP Framework<br>
 ![](images/yii.png)
