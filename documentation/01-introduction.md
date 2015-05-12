@@ -10,14 +10,27 @@ So, it will be two applications:
 ### Technology Behind Scene
 
 #### For web client app
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. 
-![](images/htmljscss.png)
-- AngularJs 1.3 as Javascript Framework and 
-![](images/angularjs.png)
-- Twitter Bootstrap 3 as CSS Framework.
-![](images/twitter_bootstrap.png)
+![](images/htmljscss.png)<br>
+This tutorial use 3 web standard language, they are HTML, JS, and CSS. Knowledge of a third language is mandatory to follow this tutorial 
+
+- AngularJs 1.3 as Javascript Framework and <br>
+![](images/angularjs.png)<br>
+AngularJs a javascript framework that is popular, it does not matter if you do not know too much of this framework. Because with knowledge of the JS and Yii then you will easily understand. To speed up your understanding, I suggest You forget about JQuery for a while this learning. Because this is in addition to two different tools , also has a different concept.
+
+- Twitter Bootstrap 3 as CSS Framework.<br>
+![](images/twitter_bootstrap.png)<br>
+TB is populer user interface framework. it is a collection of js and css script that allows us to design a beautiful web page display
 
 #### For web service 
 This tutorial use PHP and MySQL. 
-- Yii Framework 2.0 as PHP Framework
-![](images/yii.png)
+- Yii Framework 2.0 as PHP Framework<br>
+![](images/yii.png)<br>
+
+> *** Done ***<br>
+> [Back To Index](index.md) <br>
+> [01. Introduction](01-introduction.md) <br> 
+> [02. Preparation](02-preparation.md) <br>
+> [03. Create Web Service](03-create-web-service.md) <br>
+> [04. Create Web Client](04-create-web-client.md) <br>
+> [05. Security](05-security.md) <br>
+> [06. Conclusion](06-conclusion.md) <br>
