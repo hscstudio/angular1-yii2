@@ -50,14 +50,38 @@ class Book extends \yii\db\ActiveRecord
 }
 ```
 
-2.	Create model of book table
-Create file Book.php in folder models, You can create via Gii or manual..
+### Config Yii as Restful Application
+If You very new comer in rest Yii 2, please read from this guide https://github.com/yiisoft/yii2/blob/master/docs/guide/rest-quick-start.md. Its good start, to learn and explore restful in Yii
 
-#### For web client app
+#### Create Rest Controller
+Although not able to use gii to generate CRUD Restful , but Yii has an easy and fun way, here magical.
+
+For example, create [BookController.php](../web-service/controllers/BookController.php)  in folder controllers. 
  
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. 
-- AngularJs 1.3 as Javascript Framework and 
-- Twitter Bootstrap as CSS Framework.
+```php
+namespace app\controllers;
+
+use yii\rest\ActiveController;
+
+class BookController extends ActiveController
+{
+    # adjust the models
+    public $modelClass = 'app\models\Book';
+    
+    public function behaviors()
+    {
+        return 
+        \yii\helpers\ArrayHelper::merge(parent::behaviors(), [
+            'corsFilter' => [
+                'class' => \yii\filters\Cors::className(),
+            ],
+        ]);
+    }
+}
+```
+Add behavior for CORS to grant access to third party code (ajax calls from external domain) to be JSON (optional). read be carefully http://www.yiiframework.com/doc-2.0/yii-filters-cors.html
+
+If You have other model to be made controllersnya restfulnya then you have to create new controllers.
 
 #### For web service 
 This tutorial use PHP and MySQL. 
