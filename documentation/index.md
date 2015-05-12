@@ -7,7 +7,7 @@
 - [Create Web Service] (03-create-web-service.md)
 - [Create Web Client] (04-create-web-client.md)
 - [Security] (05-security.md)
-- [Conclusion] (04-conclusion.md)
+- [Conclusion] (06-conclusion.md)
 
 ## Development
 Want to contribute? Great! 
