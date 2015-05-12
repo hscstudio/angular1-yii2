@@ -1,20 +1,23 @@
-## Introduction
+## Conclusion
 
-### Open Your Mind
-I will show You about How To Create Single Page Application (SPA) in minutes with using AngularJs and Yii Framework 2.0. This client server web application will simulate a Create Read Update Delete (CRUD) data processing. Where user interface of this application will full control by AngularJs, then data will provide by Yii Framework 2.0 as web services.
+Yii 2 makes us easier and faster in making the web service as well as teach in ways that properly and safely.
 
-So, it will be two applications:
-- 1.	Web Client Application
-- 2.	Web Service Application
+Remarkable , if AngularJs as best Js framework is now integrated with Yii Framework 2.0 as the best PHP Framework .
 
-### Technology Behind Scene
+Happy coding fun
 
-#### For web client app
- 
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. 
-- AngularJs 1.3 as Javascript Framework and 
-- Twitter Bootstrap as CSS Framework.
+Jakarta, Indonesia
+May, 12 2015
 
-#### For web service 
-This tutorial use PHP and MySQL. 
-- Yii Framework 2.0 as PHP Framework
+Hafid Mukhlasin
+http://www.hafidmukhlasin.com
+---
+
+> *** Done ***<br>
+> [Back To Index](index.md) <br>
+> [01. Introduction](01-introduction.md) <br> 
+> [02. Preparation](02-preparation.md) <br>
+> [03. Create Web Service](03-create-web-service.md) <br>
+> [04. Create Web Client](04-create-web-client.md) <br>
+> [05. Customization](05-customization.md) <br>
+> [06. Conclusion](06-conclusion.md) <br>
