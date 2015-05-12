@@ -135,7 +135,7 @@ OPTIONS /books/123: show the supported verbs regarding endpoint /books/123.
 
 Info: Yii will automatically pluralize controller names for use in endpoints. You can configure this using the yii\rest\UrlRule::$pluralize-property.
 
-Tip: You may also access your APIs via Web browser by entering the URL http://localhost/web-service/web/books. However, you may need some browser plugins to send specific request headers. for example: I use Postman Chrome Extension
+Tip: You may also access your APIs via Web browser by entering the URL [http://localhost/web-service/web/books](http://localhost/web-service/web/books). However, you may need some browser plugins to send specific request headers. for example: I use Postman Chrome Extension
 
 ![](images/postman.png)
 
