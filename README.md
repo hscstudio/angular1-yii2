@@ -23,9 +23,9 @@ after it do this in terminal
 cd web-service
 composer update --prefer-dist
 ```
-set config database in Yii 2 in file web-service\config\db.php
+set config database in Yii 2 in file [web-service\config\db.php](web-service\config\db.php)
 ### Setup Web-Client (AngularJS 1.3)
-Only set variabel serviceBase in file web-client\app.js
+Only set variabel serviceBase in file [web-client\app.js](web-client\app.js)
 
 ## Technology Behind The Scene
 * [AngularJS](http://www.angularjs.org) - HTML enhanced for web apps!
