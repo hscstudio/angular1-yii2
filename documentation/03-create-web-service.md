@@ -7,6 +7,8 @@ Create database "angular_spa" and create "book" table with following structure.<
 ![](images/dbstructure.png)<br>
 or import this sql [angular_spa.sql](../web-service/angular_spa.sql)
 
+Insert some data in this table, You can create other table but this tutorial only will give example book table.
+
 ### Config Database Connection
 Open [config/db.php](../web-service/config/db.php) in root of Yii application (web service). Modify db configuration and adjust the settings on your server database
 
@@ -20,7 +22,36 @@ return [
 ];
 ```
 
-### Technology Behind Scene
+### Create Models
+Please generate class models from all the tables . You can use tools to menggeneratenya gii or make it manually. I will not explain to you how to make use gii on the assumption that you are already accustomed to using Yii.
+
+This is [models/Book.php](../web-service/models/Book.php) 
+```php
+namespace app\models;
+use Yii;
+
+class Book extends \yii\db\ActiveRecord
+{
+    public static function tableName()
+    {
+        return 'book';
+    }
+
+    public function rules()
+    {
+        return [
+            [['title', 'author', 'publisher', 'year'], 'required'],
+            [['id', 'year'], 'integer'],            
+            [['title'], 'string', 'max' => 255],
+            [['description'], 'string'],
+            [['author','publisher'], 'string', 'max' => 50]
+        ];
+    }
+}
+```
+
+2.	Create model of book table
+Create file Book.php in folder models, You can create via Gii or manual..
 
 #### For web client app
  
