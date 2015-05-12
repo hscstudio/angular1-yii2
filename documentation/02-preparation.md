@@ -36,7 +36,27 @@ so that the assets contained in the folder angular and all the material from the
 + + + etc
 
 #### Connecting AngularJs & Twitter Bootstrap with HTML
-In order to use angularjs and twitter bootstrap, so we need to create an html file html file which will menginclude file of the two libraries.
+In order to use angularjs and twitter bootstrap, so we need to create an html file html file which will menginclude file of the two libraries. Put this file (index.html) in the root of the web-client folder
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/twitter-bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/twitter-bootstrap/css/bootstrap-theme.min.css" />
+</head>
+<body>
+  
+  <!-- JS -->
+  <script src="assets/angular/angular.min.js"></script>
+  <script src="assets/angular/angular-route.min.js"></script>
+  <script src="assets/angular/angular-animate.min.js"></script>
+  
+</body>
+
+</html>
+```
 
 ### Technology Behind Scene
 
