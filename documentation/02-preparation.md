@@ -58,14 +58,16 @@ In order to use angularjs and twitter bootstrap, so we need to create an html fi
 </html>
 ```
 
-### Technology Behind Scene
+While this is quite so first. Furthermore, we will arrange for angular and twitter bootstrap function on this document
 
-#### For web client app
- 
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. 
-- AngularJs 1.3 as Javascript Framework and 
-- Twitter Bootstrap as CSS Framework.
+### For Web Service
 
-#### For web service 
-This tutorial use PHP and MySQL. 
-- Yii Framework 2.0 as PHP Framework
+Install Yii 2.0 Basic https://github.com/yiisoft/yii2-app-basic
+```
+composer global require "fxp/composer-asset-plugin:1.0.0"
+composer create-project --prefer-dist yiisoft/yii2-app-basic web-service
+```
+Prefered way using composer, but You can install manual checkout in http://yiiframework.com
+
+*** Done ***<br>
+[Back To Index](index.md)
