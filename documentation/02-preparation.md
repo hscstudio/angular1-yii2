@@ -38,7 +38,7 @@ so that the assets contained in the folder angular and all the material from the
 #### Connecting AngularJs & Twitter Bootstrap with HTML
 In order to use angularjs and twitter bootstrap, so we need to create an html file html file which will menginclude file of the two libraries. Put this file (index.html) in the root of the web-client folder
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
