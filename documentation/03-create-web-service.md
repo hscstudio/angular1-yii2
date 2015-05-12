@@ -8,11 +8,17 @@ Create database "angular_spa" and create "book" table with following structure.<
 or import this sql [angular_spa.sql](../web-service/angular_spa.sql)
 
 ### Config Database Connection
-I will show You about How To Create Single Page Application (SPA) in minutes with using AngularJs and Yii Framework 2.0. This client server web application will simulate a Create Read Update Delete (CRUD) data processing. Where user interface of this application will full control by AngularJs, then data will provide by Yii Framework 2.0 as web services.
+Open [config/db.php](../web-service/config/db.php) in root of Yii application (web service). Modify db configuration and adjust the settings on your server database
 
-So, it will be two applications:
-- 1.	Web Client Application
-- 2.	Web Service Application
+```php
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=angular_spa',
+    'username' => 'root',
+    'password' => '',
+    'charset' => 'utf8',
+];
+```
 
 ### Technology Behind Scene
 
