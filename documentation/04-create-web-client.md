@@ -112,7 +112,9 @@ spaApp_site.config(['$routeProvider', function($routeProvider) {
 	$scope.message = 'Contact us! JK. This is just a demo.';
 }]);
 ```
+
 This file is sub module to handle site views, maybe in Yii is like as SiteController.php. Please see this code..
+
 ```js
 spaApp_site.config(['$routeProvider', function($routeProvider) {
   $routeProvider
@@ -127,22 +129,26 @@ spaApp_site.config(['$routeProvider', function($routeProvider) {
 	});
 }])
 ```
+
 This is routing configuration of this sub module only. Every route have may templateUrl and controller. If You dont understand, I will analogize with Yii.
 - TemplateUrl is other file html as partial content in Yii maybe same with views
 - Controller is name of controller that do some process, for example set variable in template. in Yii maybe same with function of class controllers
 if all routing is not met then it will be executed otherwise
+
 ```js
 .controller('index', ['$scope', '$http', function($scope,$http) {
 	// create a message to display in our view
 	$scope.message = 'Everyone come and see how good I look!';
 }])
 ```
+
 $scope is scope that can be handled by the angular app in this case is all the tags under the tag which is marked with ng - app <html ng-app="spaApp">
 
 $scope.message, message is variabel in file templateUrl, let say views/site/index.html, point to {{message}}
  
 ### Include Main Module and Sub Module
 After create main module app.js and sub module site.js, we must include it in entry script of app [index.html](../web-client/index.html)
+
 ```html
   <script src="assets/angular/angular-animate.min.js"></script>
   <!-- Include this js -->
@@ -150,6 +156,7 @@ After create main module app.js and sub module site.js, we must include it in en
   <script src="controllers/site.js"></script>
 </body>
 ```
+
 ### Create Template File
 Okey, after it then create template file that pointed by controller, okey create all file in [views](../web-client/views/) folder
 - Create [site/index.html](../web-client/views/site/index.html)
