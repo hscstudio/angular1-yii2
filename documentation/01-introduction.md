@@ -10,18 +10,18 @@ So, it will be two applications:
 ### Technology Behind Scene
 
 #### For web client app
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. <br>
-![](images/htmljscss.png)
-Knowledge of a third language is mandatory to follow this tutorial 
+![](images/htmljscss.png)<br>
+This tutorial use 3 web standard language, they are HTML, JS, and CSS. Knowledge of a third language is mandatory to follow this tutorial 
 
 - AngularJs 1.3 as Javascript Framework and <br>
-![](images/angularjs.png)
+![](images/angularjs.png)<br>
 AngularJs a javascript framework that is popular, it does not matter if you do not know too much of this framework. Because with knowledge of the JS and Yii then you will easily understand.
 
 To speed up your understanding, I suggest You forget about JQuery for a while this learning. Because this is in addition to two different tools , also has a different concept.
 
 - Twitter Bootstrap 3 as CSS Framework.<br>
 ![](images/twitter_bootstrap.png)
+TB is populer user interface framework. it is a collection of js and css script that allows us to design a beautiful web page display
 
 #### For web service 
 This tutorial use PHP and MySQL. 
