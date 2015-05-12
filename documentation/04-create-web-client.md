@@ -182,42 +182,318 @@ This is only simple example of views :)
 [http://localhost/web-client](http://localhost/web-client)<br>
 ![](images/testing1.png)
  
-7.	Modify app.js
+### Modify app.js
 Add js global varabel serviceBase that refer to Your Yii 2 web service, then add sub module spaApp.book
- 
-8.	Create file book.js in folder models
-book.js will handle CRUD data from Rest Yii 2. I force You understand it as models in Yii 2 
- 
- 
-To understand it, so simple.. focus to function of objects: obj,getBooks, obj.createBook, etc. And in every function, there are process to shoot to Rest Yii.. for example 
+```js
+'use strict';
+var serviceBase = 'http://127.0.0.1/web-service/web/'
+// Declare app level module which depends on views, and components
+var spaApp = angular.module('spaApp', [
+  'ngRoute',
+  'spaApp.site',
+  'spaApp.book',
+]);
+var spaApp_site = angular.module('spaApp.site', ['ngRoute'])
+var spaApp_book = angular.module('spaApp.book', ['ngRoute']);
+
+spaApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.otherwise({redirectTo: '/site/index'});
+}]); 
+```
+### Create file [book.js](../web-client/models/book.js) in folder models
+book.js will handle CRUD data from Rest Yii 2. I force You understand it as models in Yii 2 :)
+```js
+'use strict';
+spaApp_book.factory("services", ['$http','$location','$route', 
+	function($http,$location,$route) {
+    var obj = {};
+    obj.getBooks = function(){
+        return $http.get(serviceBase + 'books');
+    }	
+	obj.createBook = function (book) {
+		return $http.post( serviceBase + 'books', book )
+			.then( successHandler )
+			.catch( errorHandler );
+		function successHandler( result ) {
+			$location.path('/book/index');			
+		}
+		function errorHandler( result ){
+			alert("Error data")
+			$location.path('/book/create')
+		}
+	};	
+	obj.getBook = function(bookID){
+        return $http.get(serviceBase + 'books/' + bookID);
+    }
+	
+	obj.updateBook = function (book) {
+	    return $http.put(serviceBase + 'books/' + book.id, book )
+			.then( successHandler )
+			.catch( errorHandler );
+		function successHandler( result ) {
+			$location.path('/book/index');
+		}
+		function errorHandler( result ){
+			alert("Error data")
+			$location.path('/book/update/' + book.id)
+		}	
+	};	
+	obj.deleteBook = function (bookID) {
+	    return $http.delete(serviceBase + 'books/' + bookID)
+			.then( successHandler )
+			.catch( errorHandler );
+		function successHandler( result ) {
+			$route.reload();
+		}
+		function errorHandler( result ){
+			alert("Error data")
+			$route.reload();
+		}	
+	};	
+    return obj;   
+}]);
+```
+To understand it, so simple.. focus to function of objects: obj,getBooks, obj.createBook, etc. And in every function, there are process to point to RESTfull URL of Yii.. 
+
+For example 
+```js
 obj.getBooks = function(){
         return $http.get(serviceBase + 'books');
     }
-For get list of the book use method GET, see in https://github.com/yiisoft/yii2/blob/master/docs/guide/rest-quick-start.md,
+```
+For get list of the book use method GET, see in [this guide](https://github.com/yiisoft/yii2/blob/master/docs/guide/rest-quick-start.md#trying-it-out-),
+
+```js
 obj.createBook = function (book) {
 		return $http.post( serviceBase + 'books', book )
+```
 create book use method POST
+
+```js
 obj.updateBook = function (book) {
 	    return $http.put(serviceBase + 'books/' + book.id, book )
+```
 update book use PUT method..
-Okey, sos simple, You understand?
-9.	Create file book.js in folder controller
-This file is controller to handle book views, maybe in Yii is like as BookController.php
- 
 
+Okey, sos simple, do You understand now?
+
+### Create Controller for Sub Module Site
+Create file [book.js](../web-client/controllers/book.js) in folder controllers, is controller to handle book views, maybe in Yii is like as BookController.php
+```js
+'use strict';
+spaApp_book.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+	.when('/book/index', {
+		templateUrl: 'views/book/index.html',
+		controller: 'index'
+	})
+	.when('/book/create', {
+		templateUrl: 'views/book/create.html',
+		controller: 'create',
+		resolve: {
+			book: function(services, $route){
+				return services.getBooks();
+			}
+        }
+	})
+	.when('/book/update/:bookId', {
+		templateUrl: 'views/book/update.html',
+		controller: 'update',
+		resolve: {
+          book: function(services, $route){
+            var bookId = $route.current.params.bookId;
+            return services.getBook(bookId);
+          }
+        }
+	})
+	.when('/book/delete/:bookId', {
+		templateUrl: 'views/book/index.html',
+		controller: 'delete',
+	})
+	.otherwise({
+		redirectTo: '/book/index'
+	});
+}]);
+
+spaApp_book.controller('index', ['$scope', '$http', 'services', 
+	function($scope,$http,services) {
+	$scope.message = 'Everyone come and see how good I look!';
+	services.getBooks().then(function(data){
+        $scope.books = data.data;
+    });	
+	$scope.deleteBook = function(bookID) {
+		if(confirm("Are you sure to delete book number: " + bookID)==true && bookID>0){
+			services.deleteBook(bookID);	
+			$route.reload();
+		}
+	};
+}])
+.controller('create', ['$scope', '$http', 'services','$location','book', 
+	function($scope,$http,services,$location,book) {
+	$scope.message = 'Look! I am an about page.';
+	$scope.createBook = function(book) {
+        var results = services.createBook(book);
+    }  
+}])
+.controller('update', ['$scope', '$http', '$routeParams', 'services','$location','book', 
+	function($scope,$http,$routeParams,services,$location,book) {
+	$scope.message = 'Contact us! JK. This is just a demo.';
+	var original = book.data;
+	$scope.book = angular.copy(original);
+	$scope.isClean = function() {
+		return angular.equals(original, $scope.book);
+	}
+	$scope.updateBook = function(book) {	
+        var results = services.updateBook(book);
+    } 
+}]);
+```
+Use Yii analogy to understand this code :)
+
+### Create Template File of Sub Module Book
+Create template file that pointed by controller at sub module book, okey create all file in [views](../web-client/views/) folder
+- Create [book/index.html](../web-client/views/book/index.html)
+```html
+<div>
+	<h1>BOOK CRUD</h1>	
+	<p>{{ message }}</p>
+	<div ng-show="books.length > 0">
+	<a class="btn btn-primary" href="#/book/create">
+		<i class="glyphicon glyphicon-plus"></i> Create
+	</a>
+	<table class="table table-striped table-hover">
+	<thead>
+	<th>Title</th>
+	<th>Author</th>
+	<th>Publisher</th>
+	<th>Year</th>
+	<th style="width:80px;">Action&nbsp;</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="data in books">
+			<td>{{data.title}}</td>
+			<td>{{data.author}}</td>
+			<td>{{data.publisher}}</td>
+			<td>{{data.year}}</td>
+			<td>
+			<a class="btn btn-primary btn-xs" href="#/book/update/{{data.id}}">
+				<i class="glyphicon glyphicon-pencil"></i>
+			</a> 
+			<a class="btn btn-danger btn-xs" ng-click="deleteBook(data.id)">
+				<i class="glyphicon glyphicon-trash"></i>
+			</a>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	</div>
+	<div ng-show="books.length == 0">
+		Empty
+	</div>
+</div>
+```
+- Create [book/create.html](../web-client/views/book/create.html)
+```html
+<div>
+	<h1>BOOK CRUD</h1>
+	
+	<p>{{ message }}</p>
+	<form role="form" name="myForm">
+		<div class= "form-group" ng-class="{error: myForm.title.$invalid}">
+			<label> Title </label>
+			<div>
+			<input name="title" ng-model="book.title" type= "text" class= "form-control" placeholder="Title" required/>
+			<span ng-show="myForm.title.$dirty && myForm.title.$invalid" class="help-inline">Title Required</span>
+			</div>
+		</div>
+		<div class= "form-group">
+			<label> Description </label>
+			<div>
+			<textarea name="description" ng-model="book.description" class= "form-control" placeholder= "Description"></textarea>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.author.$invalid}">
+			<label> Author </label>
+			<div>
+			<input name="author" ng-model="book.author" type= "text" class= "form-control" placeholder="Author" required/>
+			<span ng-show="myForm.author.$dirty && myForm.author.$invalid" class="help-inline">Author Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.publisher.$invalid}">
+			<label> Publisher </label>
+			<div>
+			<input name="publisher" ng-model="book.publisher" type= "text" class= "form-control" placeholder="Publisher" required/>
+			<span ng-show="myForm.publisher.$dirty && myForm.publisher.$invalid" class="help-inline">Publisher Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.year.$invalid}">
+			<label> Year </label>
+			<div>
+			<input name="year" ng-model="book.year" type= "text" class= "form-control" placeholder="Year" required/>
+			<span ng-show="myForm.year.$dirty && myForm.year.$invalid" class="help-inline">Year Required</span>
+			</div>
+		</div>
+	  
+		<a href="#/book/index" class="btn btn-default">Cancel</a>
+		<button ng-click="createBook(book);" 
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+```
+- Create [book/update.html](../web-client/views/book/update.html)
+```html
+<div>
+	<h1>BOOK CRUD</h1>
+	
+	<p>{{ message }}</p>
+	<form role="form" name="myForm">
+		<div class= "form-group" ng-class="{error: myForm.title.$invalid}">
+			<label> Title </label>
+			<div>
+			<input name="title" ng-model="book.title" type= "text" class= "form-control" placeholder="Title" required/>
+			<span ng-show="myForm.title.$dirty && myForm.title.$invalid" class="help-inline">Title Required</span>
+			</div>
+		</div>
+		<div class= "form-group">
+			<label> Description </label>
+			<div>
+			<textarea name="description" ng-model="book.description" class= "form-control" placeholder= "Description"></textarea>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.author.$invalid}">
+			<label> Author </label>
+			<div>
+			<input name="author" ng-model="book.author" type= "text" class= "form-control" placeholder="Author" required/>
+			<span ng-show="myForm.author.$dirty && myForm.author.$invalid" class="help-inline">Author Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.publisher.$invalid}">
+			<label> Publisher </label>
+			<div>
+			<input name="publisher" ng-model="book.publisher" type= "text" class= "form-control" placeholder="Publisher" required/>
+			<span ng-show="myForm.publisher.$dirty && myForm.publisher.$invalid" class="help-inline">Publisher Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.year.$invalid}">
+			<label> Year </label>
+			<div>
+			<input name="year" ng-model="book.year" type= "text" class= "form-control" placeholder="Year" required/>
+			<span ng-show="myForm.year.$dirty && myForm.year.$invalid" class="help-inline">Year Required</span>
+			</div>
+		</div>
+	  
+		<a href="#/book/index" class="btn btn-default">Cancel</a> 
+		<button ng-click="updateBook(book);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+```
+
+### Testing now
  
-10.	Create index.html in folder views/book/
- 
- 
-11.	Create create.html in folder views/book/
- 
- 
-12.	Create update.html in folder views/book/
- 
- 
-13.	Testing now
- 
- 
+![](images/testing2.png)
 
 ---
 
