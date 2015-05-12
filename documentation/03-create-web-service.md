@@ -121,6 +121,7 @@ Info: The above configuration is optional. Without the above configuration, the 
 #### Testing in Your Browser Now!
 With the above minimal amount of effort, you have already finished your task of creating the RESTful APIs for accessing the book data. The APIs you have created include:
 
+```
 GET /books: list all books page by page;
 HEAD /books: show the overview information of book listing;
 POST /books: create a new book;
@@ -130,6 +131,7 @@ PATCH /books/123 and PUT /books/123: update the book 123;
 DELETE /books/123: delete the book 123;
 OPTIONS /books: show the supported verbs regarding endpoint /books;
 OPTIONS /books/123: show the supported verbs regarding endpoint /books/123.
+```
 
 Info: Yii will automatically pluralize controller names for use in endpoints. You can configure this using the yii\rest\UrlRule::$pluralize-property.
 
