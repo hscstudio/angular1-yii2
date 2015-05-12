@@ -17,7 +17,7 @@ cd angular1-yii2
 ```
 
 ### Setup Web-Service (Yii 2.0)
-import database [angular_spa.sql](angular_spa.sql) (use Your prefered way, I use phpmyadmin)
+import database [angular_spa.sql](angular_spa.sql) (use Your prefered way to import this sql database)
 after it do this in terminal
 ```
 cd web-service
@@ -37,7 +37,7 @@ Good start to learn this topic is [click here](documentation/index.md)
 
 ## Development
 Want to contribute? Great!
-[click here](documentation/index.md)
+[click here](documentation/index.md#development)
 
 ## Todo's
  - Bugfix
