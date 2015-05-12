@@ -1,5 +1,4 @@
-# How To Create Single Page Application in minutes! 
-# with AngularJs 1.3 and Yii 2.0
+# How To Create Single Page Application in minutes! <br> with AngularJs 1.3 and Yii 2.0
 ![](images/angularjsyii.png)
 
 ## Table Of Contents
@@ -20,9 +19,9 @@ Want to contribute? Great!
 > - Submit request (https://github.com/hscstudio/angular1-yii2/pulls)
 
 ## Reference
-  [1]: http://www.yiiframework.com/doc-2.0
-  [2]: https://github.com/yiisoft/yii2
-  [3]: https://github.com/githubjeka/angular-yii2
+- 1: http://www.yiiframework.com/doc-2.0
+- 2: https://github.com/yiisoft/yii2
+- 3: https://github.com/githubjeka/angular-yii2
 
 ## Our Team
 - [Hafid Mukhlasin](http://www.hafidmukhlasin.com) - Project Leader / Indonesian Yii Programmer
