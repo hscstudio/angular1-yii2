@@ -46,7 +46,9 @@ Add this content inside body tag, its are Navbar for menu, main for page contain
     <p>Yii 2.0.3 + AngularJs 1.3.15</p>
   </footer> 
 ```
+
 Important thing of this code is in div tag id container.. 
+
 ```html
 <div id="main" class="container"> 
   <!-- angular templating -->
@@ -54,10 +56,12 @@ Important thing of this code is in div tag id container..
   <div ng-view></div>    
 </div>
 ```
+
 <div ng-view></div>, in this div will placed the dynamic content from other file or page view.
 
 ### Create Main Module & Sub Module
 The main module is intended to controll other javascript script for example sub module. We named him with [app.js](../web-client/app.js) and placed in the root of the web - client
+
 ```js
 'use strict';
 // adjust to the Your url of web service
@@ -75,10 +79,12 @@ spaApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/site/index'});
 }]);
 ```
+
 Default route is /site/index, this route will handled by sub module "spaApp.site"
 
 ### Create Definition of Sub Module
 After create sub module spaApp.site, let us define what that sub module do. Create file [site.js](../web-client/controllers/site.js) in folder controllers. 
+
 ```js
 'use strict';
 spaApp_site.config(['$routeProvider', function($routeProvider) {
