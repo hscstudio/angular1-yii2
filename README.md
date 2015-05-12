@@ -33,7 +33,7 @@ Only set variabel serviceBase in file web-client\app.js
 * [Yii Framework](http://www.yiiframework.com) - High performance PHP Framework
 
 ## Tutorial
-Good start to learni this topic is [click here](documentation/index.md)
+Good start to learn this topic is [click here](documentation/index.md)
 
 ## Development
 Want to contribute? Great!
