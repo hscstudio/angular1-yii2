@@ -27,10 +27,10 @@ cd web-service
 composer update --prefer-dist
 ```
 
-Set database config in [web-service\config\db.php](web-service\config\db.php).
+Set database config in [web-service\config\db.php](web-service/config/db.php).
 
 Set up two hosts in your webserver. One should point to `web-client`, aother to `web-service/web`. Then set `serviceBase`
-variable in [web-client\app.js](web-client\app.js) to point to web-service URL.
+variable in [web-client\app.js](web-client/app.js) to point to web-service URL.
 
 ## License
 
