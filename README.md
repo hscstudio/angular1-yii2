@@ -6,7 +6,8 @@
 This is a demo and a tutorial showing how to develop an application using Yii 2.0 for creating REST API and then using it
 from UI built with AngularJS.
 
-Tutorial is [available here](documentation/index.md).
+Tutorial is [available here](documentation/index.md).<br>
+Book is [available here](https://www.gitbook.com/book/hscstudio/angular1-yii2/details)
 
 ## Installing demo
 
