@@ -62,7 +62,6 @@ Create `index.html` and put it into your web root directory:
   <!-- JS -->
   <script src="assets/angular/angular.min.js"></script>
   <script src="assets/angular/angular-route.min.js"></script>
-  <script src="assets/angular/angular-animate.min.js"></script>
   
 </body>
 
