@@ -1,42 +1,53 @@
-## Prepare Your Weapons
+# Preparations
 
-### For Web Client
-create a folder on the web - client web - accessible folder ( eg htdocs , public_html , www , etc. ) and then inside the folder again make four sub folder namely assets , controllers , models, views
+It's time to start preparing applications. The following are separate steps for client and service applications.
 
-This folder structure is a folder structure of our client web application. Why is structurally similar to the structure of Yii ? yes , I deliberately made ​​it resemble Yii where you can easily understand it . Interesting isn't it ?
+## Web Client Application
 
-Well , I will explain the function of each folder:
--	Assets folder for core angularJs and TwitterBootstrap, 
--	Controllers folder for javascript controller of angularJs
--	Models folders for services, connecting to Restful CRUD URL Yii 2.0
--	Views folder for partial page, is like views in Yii :)
+Create a web root directory (usually it's `web`, `htdocs`, `public_html`, `www` or alike name). Inside add directories
+named `assets`, `controllers`, `models` and `views`.
 
-You love with this arrangement ?
+The structure we've just created is similar to the structure used by Yii. You can adjust it as you like but for this
+tutorial we'll stick to Yii convention in order to make it easier to understand.
 
-#### Download Twitter Bootstrap
-Download this library from http://getbootstrap.com/, and extract to folder assets
+Let's explain all these directories a bit:
 
-so that the assets contained in the folder twitter-bootstrap folder inside the folder and then there are three folders twitter bootstrap again that js , css and fonts
-+ assets
-+ + twitter-bootstrap
-+ + + js
-+ + + css
-+ + + font
+- `assets` contains AngularJs and CSS Bootstrap libraries. 
+- `controllers` is for AngularJs controllers.
+- `models` is for services which deal with RESTful CRUD API we're going to build.
+- `views` is for partial pages. Much like views in Yii.
 
-#### Download AngularJs
-Download this library from http://angularjs.org/, and extract to folder assets
+### Get CSS Bootstrap
 
-so that the assets contained in the folder angular and all the material from the angular library is placed in this folder
-+ assets
-+ + twitter-bootstrap
-+ + angular
-+ + + angular.js
-+ + + angular.min.js
-+ + + ...
-+ + + etc
+Download a library from [http://getbootstrap.com/](http://getbootstrap.com/) and extract it to `assets` directory like
+the following:
 
-#### Connecting AngularJs & Twitter Bootstrap with HTML
-In order to use angularjs and twitter bootstrap, so we need to create an html file html file which will menginclude file of the two libraries. Put this file (index.html) in the root of the web-client folder
+```
+assets
+    twitter-bootstrap
+        js
+        css
+        font
+```
+
+### Get AngularJs
+
+Download a library from [http://angularjs.org/](http://angularjs.org/), and extract it into `assets` directory like the
+following:
+
+```
+assets
+    twitter-bootstrap
+    angular
+        angular.js
+        angular.min.js
+        ...
+```
+
+### Include AngularJs and CSS Bootstrap into HTML
+
+In order to use AngularJs and CSS Bootstrap we need to create an HTML file html file which will use both libraries.
+Create `index.html` and put it into your web root directory:
 
 ```html
 <!DOCTYPE html>
@@ -58,20 +69,20 @@ In order to use angularjs and twitter bootstrap, so we need to create an html fi
 </html>
 ```
 
-While this is quite so first. Furthermore, we will arrange for angular and twitter bootstrap function on this document
+## Web Service Application
 
-### For Web Service
+Install Yii 2.0 Basic project template as [described in Yii guide](http://www.yiiframework.com/doc-2.0/guide-start-installation.html).
+It is preferred to use Composer like the following:
 
-Install Yii 2.0 Basic https://github.com/yiisoft/yii2-app-basic
 ```
 composer global require "fxp/composer-asset-plugin:1.0.0"
 composer create-project --prefer-dist yiisoft/yii2-app-basic web-service
 ```
-Prefered way using composer, but You can install manual checkout in http://yiiframework.com
+
+Alternatively you can do it manually downloading and extracting archive as described at the same guide page.
 
 ---
 
-> *** Done ***<br>
 > [Back To Index](index.md) <br>
 > [01. Introduction](01-introduction.md) <br> 
 > [02. Preparation](02-preparation.md) <br>

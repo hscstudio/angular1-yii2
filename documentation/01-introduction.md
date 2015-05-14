@@ -1,36 +1,47 @@
-## Introduction
+# Introduction
 
-### Open Your Mind
-I will show You about How To Create Single Page Application (SPA) in minutes with using AngularJs and Yii Framework 2.0. This client server web application will simulate a Create Read Update Delete (CRUD) data processing. Where user interface of this application will full control by AngularJs, then data will provide by Yii Framework 2.0 as web services.
+From this guide you'll learn how to create single page application (SPA) in minutes using AngularJs and Yii Framework 2.0.
+The application will implement a Create Read Update Delete (CRUD) data processing. User interface of this application will
+be implemented using AngularJs. Data will be provided by API created using Yii Framework 2.0.
 
-So, it will be two applications:
-- 1.	Web Client Application
-- 2.	Web Service Application
+## Structure
 
-It is recommended that you develop your RESTful APIs as a separate application, different from your Web front end and back end for easier maintenance
+There will be two applications:
 
-### Technology Behind The Scene
+- Web Client Application. The one providing UI.
+- Web Service Application. The one dealing with data.
 
-#### For web client app
+> Note: For easier maintenance it is recommended that you develop your RESTful APIs as a separate application which
+  is separated from both website and admin parts of the application.
+
+## Technology Behind the Scenes
+
+Since client and service are separated, technology stack used in each case varies.
+
+### Web Client Application
+
 ![](images/htmljscss.png)<br>
-This tutorial use 3 web standard language, they are HTML, JS, and CSS. Knowledge of a third language is mandatory to follow this tutorial 
 
-- AngularJs 1.3 as Javascript Framework and <br>
-![](images/angularjs.png)<br>
-AngularJs a javascript framework that is popular, it does not matter if you do not know too much of this framework. Because with knowledge of the JS and Yii then you will easily understand. To speed up your understanding, I suggest You forget about JQuery for a while this learning. Because this is in addition to two different tools , also has a different concept.
+For client application we use HTML, JS, and CSS. At least some knowledge of all three is mandatory to follow this tutorial. 
 
-- Twitter Bootstrap 3 as CSS Framework.<br>
+- AngularJs 1.3<br>
+![](images/angularjs.png)
+AngularJs is a popular JavaScript framework. It does not matter if you do not know too much about it yet. It is relatively
+easy to undestand if you're familiar with JavaScript and Yii. If you've used jQuery before, forget about it for a while
+since concepts of AngularJs are different.
+
+- CSS Bootstrap 3<br>
 ![](images/twitter_bootstrap.png)<br>
-TB is populer user interface framework. it is a collection of js and css script that allows us to design a beautiful web page display
+Initially developed by Twitter team, CSS Bootstrap is widely used frontend UI framework. It is a collection of ready
+to use JavaScript and CSS that allows us to design a beautiful user interface quickly.
 
-#### For web service 
-This tutorial use PHP and MySQL. 
-- Yii Framework 2.0 as PHP Framework<br>
+### Web Service Application
+ 
+For service part we'll use PHP and MySQL. As a PHP framework we'll use Yii Framework 2.0<br>
 ![](images/yii.png)<br>
 
 ---
 
-> *** Done ***<br>
 > [Back To Index](index.md) <br>
 > [01. Introduction](01-introduction.md) <br> 
 > [02. Preparation](02-preparation.md) <br>

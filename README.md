@@ -1,51 +1,41 @@
-## How To Create Single Page Application in minutes! <br> with AngularJs 1.3 and Yii 2.0
+# How To Create Single Page Application in minutes! <br> with AngularJs 1.3 and Yii 2.0
 ![](documentation/images/angularjsyii.png)
 
 ## Introduction
-This is demo and tutorial about developing AngularJS 1.3.15 for web client and Yii 2.04 for web service.
 
-## Version
-- 0.1 (Alpha - 11/05/2015)
-- 0.2 (Beta - 12/05/2015)
+This is a demo and a tutorial showing how to develop an application using Yii 2.0 for creating REST API and then using it
+from UI built with AngularJS.
 
-## Getting Started
-### Installations
-Clone this repository, in terminal do this, (You should have installed git)
+Tutorial is [available here](documentation/index.md).
+
+## Installing demo
+
+In order to install demo clone this repository:
+
 ```
 git clone https://github.com/hscstudio/angular1-yii2 angular1-yii2
 cd angular1-yii2
 ```
 
-### Setup Web-Service (Yii 2.0)
-import database [angular_spa.sql](web-service/angular_spa.sql) (use Your prefered way to import this sql database)
-after it do this in terminal
+Then import database [angular_spa.sql](web-service/angular_spa.sql).
+
+After it's done run the following:
+
 ```
 cd web-service
 composer update --prefer-dist
 ```
-set config database in Yii 2 in file [web-service\config\db.php](web-service\config\db.php)
-### Setup Web-Client (AngularJS 1.3)
-Only set variabel serviceBase in file [web-client\app.js](web-client\app.js)
 
-## Technology Behind The Scene
-* [AngularJS](http://www.angularjs.org) - HTML enhanced for web apps!
-* [Twitter Bootstrap](http://www.getbootstrap.com) - great UI boilerplate for modern web apps
-* [Yii Framework](http://www.yiiframework.com) - High performance PHP Framework
+Set database config in [web-service\config\db.php](web-service\config\db.php).
 
-## Tutorial
-Good start to learn this topic is [click here](documentation/index.md)
-
-## Development
-Want to contribute? Great!
-[click here](documentation/index.md#development)
-
-## Todo's
- - Bugfix
- - Add authentication
+Set up two hosts in your webserver. One should point to `web-client`, aother to `web-service/web`. Then set `serviceBase`
+variable in [web-client\app.js](web-client\app.js) to point to web-service URL.
 
 ## License
+
 Free open source
 
-## Our Team
-- [Hafid Mukhlasin](http://www.hafidmukhlasin.com) - Project Founder / Indonesian Yii Programmer
+## Changelog
 
+- 0.1 (Alpha - 11/05/2015)
+- 0.2 (Beta - 12/05/2015)
