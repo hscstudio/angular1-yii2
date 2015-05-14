@@ -546,6 +546,12 @@ Create [book/update.html](../web-client/views/book/update.html):
 </div>
 ```
 
+### Modify Main Menu
+Don't forget to add link to book CRUD.
+```html
+<li><a href="#/book/index"><i class="glyphicon glyphicon-book"></i> Book</a></li>
+```
+
 ### Test it
  
 ![](images/testing2.png)
