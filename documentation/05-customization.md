@@ -1,11 +1,11 @@
 ## Customization
 
-To be continued, maybe will explain about paging, upload file, security, authentication, etc
+To be continued... Plan is to add info about paging, upload file, security, authentication and more.
 
-Help me please :)
+You're very welcome to contribute.
 
+---
 
-> *** Done ***<br>
 > [Back To Index](index.md) <br>
 > [01. Introduction](01-introduction.md) <br> 
 > [02. Preparation](02-preparation.md) <br>

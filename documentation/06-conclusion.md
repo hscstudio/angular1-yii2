@@ -1,10 +1,9 @@
 ## Conclusion
 
-Yii 2 makes us easier and faster in making the web service as well as teach in ways that properly and safely.
+Yii 2.0 makes it much easier and faster to implement a web service as well as teaching us how to do it properly.
+The API created could be used easily from AngularJs or any other client. Overall, AngularJS and Yii 2.0 are a good match.
 
-Remarkable , if AngularJs as best Js framework is now integrated with Yii Framework 2.0 as the best PHP Framework .
-
-Happy coding fun
+Happy coding!
 
 Jakarta, Indonesia
 May, 12 2015
@@ -13,7 +12,6 @@ Hafid Mukhlasin
 http://www.hafidmukhlasin.com
 ---
 
-> *** Done ***<br>
 > [Back To Index](index.md) <br>
 > [01. Introduction](01-introduction.md) <br> 
 > [02. Preparation](02-preparation.md) <br>
