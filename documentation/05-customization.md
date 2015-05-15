@@ -7,6 +7,9 @@ You're very welcome to contribute.
 ## Enhance User Interface
 
 ### Angular Animation
+https://docs.angularjs.org/tutorial/step_12
+https://docs.angularjs.org/guide/animations
+https://docs.angularjs.org/api/ngAnimate
 
 ### Flash Message
 
