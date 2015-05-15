@@ -24,7 +24,18 @@ You're very welcome to contribute.
 
 ## Handling File Upload
 
+## Deploying Application
+Before we deploy our application, we need do some things.
 
+### Web Client
+Read official guide for application production [click here](https://docs.angularjs.org/guide/production).
+
+### Web Service
+Modify file [web/index.php](../web-service/web/index.php) in web-service, set Yii_DEBUG const to be `false`, and then YII_ENV to be `prod`
+```php
+defined('YII_DEBUG') or define('YII_DEBUG', false);
+defined('YII_ENV') or define('YII_ENV', 'prod');
+```
 
 ---
 
