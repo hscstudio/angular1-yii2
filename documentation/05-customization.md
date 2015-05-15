@@ -12,6 +12,8 @@ You're very welcome to contribute.
 
 ## Authorization
 
+## Handling File Upload
+
 ---
 
 > [Back To Index](index.md) <br>
