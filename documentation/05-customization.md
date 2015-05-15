@@ -83,7 +83,9 @@ angular.bootstrap(document, ['spaApp'], {
 
 #### 
 ### Web Service
-Modify file [web/index.php](../web-service/web/index.php) in web-service, set Yii_DEBUG const to be `false`, and then YII_ENV to be `prod`
+Same with AngularJs, in production environments, we should disable debug mode. It may have a significant and adverse performance effect, besides that the debug mode may expose sensitive information to end users.
+
+Modify file [web/index.php](../web-service/web/index.php) in web-service, set `Yii_DEBUG` const to be `false`, and then `YII_ENV` to be `prod`.
 ```php
 defined('YII_DEBUG') or define('YII_DEBUG', false);
 defined('YII_ENV') or define('YII_ENV', 'prod');
