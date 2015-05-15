@@ -31,8 +31,7 @@ Create file [bower.json](../web-client2/bower.json) in folder web-client
   "dependencies": {
     "angular": "~1.3.0",
     "bootstrap": "~3.1.1",
-    "angular-route": "~1.3.0",
-    "angular-animate": "~1.3.0"
+    "angular-route": "~1.3.0"
   }
 }
 ```
@@ -51,34 +50,74 @@ After installation finished, You can see folder assets have contained library an
 
 ### Include in Index
 Because structure folder that downloaded by bower is different, we should adjust links js and css in file [index.html](web-client2/index.html).
- 
+```html
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap-theme.min.css" />
+```
+  
+```html
+  <!-- JS -->
+  <script src="assets/angular/angular.min.js"></script>
+  <script src="assets/angular-route/angular-route.min.js"></script>
+```
 
 ## Enhance User Interface
 
 ### Angular Animation
 There are several types of animation techniques that we can apply in our angularjs application. But in this tutorial I will discuss about the animation at the turn of the page. To do that, we need the ngAnimate module to enable animations throughout the application.
 
+Add module angular-animate in bower.json
 ```
 {
-  "name": "angular1-yii2",
-  "description": "AngularJS 1.3 and Yii Framework 2.0",
-  "version": "1.0.0",
-  "homepage": "https://github.com/hscstudio/angular1-yii2",
-  "license": "MIT",
-  "private": true,
+  ...
+  ...
   "dependencies": {
-    "angular": "~1.3.0",
-    "angular-mocks": "~1.3.0",
-    "bootstrap": "~3.1.1",
-    "angular-route": "~1.3.0",
-    "angular-resource": "~1.3.0",
+    ...
+	...
     "angular-animate": "~1.3.0"
   }
 }
 ```
-https://docs.angularjs.org/tutorial/step_12<br>
-https://docs.angularjs.org/guide/animations<br>
-https://docs.angularjs.org/api/ngAnimate<br>
+And then do 
+```
+bower update
+```
+
+Create [style.css](../web-client2/style.css) for define animation, for example:
+```css
+.animate.ng-leave      {
+
+}
+.animate.ng-enter 		{  
+	-webkit-animation:scaleUp 0.5s both ease-in;
+	-moz-animation:scaleUp 0.5s both ease-in;
+	animation:scaleUp 0.5s both ease-in;  
+}
+
+/* scale up */
+@keyframes scaleUp {
+	from 		{ opacity: 0.3; transform: scale(0.8); }
+}
+@-moz-keyframes scaleUp {
+	from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
+}
+@-webkit-keyframes scaleUp {
+	from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+```
+- ng-enter : will attach when entering view
+- ng-leave : when attach when leaving view
+
+Include css animation in [index.html](../web-client2/index.html):
+```html
+<link rel="stylesheet" href="style.css" />
+```
+
+For further informations, read this:
+- https://docs.angularjs.org/tutorial/step_12<br>
+- https://docs.angularjs.org/guide/animations<br>
+- https://docs.angularjs.org/api/ngAnimate<br>
 
 ### Flash Message
 
