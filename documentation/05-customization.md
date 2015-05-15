@@ -2,6 +2,53 @@
 
 This page still experimental. You're very welcome to contribute.
 
+## Miscellaneous
+For installation `assets` (javascript and css), we can use [bower](http://bower.io). Bower is a package manager for the web. It's quite with composer in PHP.
+
+> You should drop all folders and files inside assets folder before using bower, because bower will download libraries for You by special structure.
+
+### Installation
+Before installation bower, we must install:
+- [nodeJs & npm](http://nodejs.org) 
+Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. NPM is package manager for javascript 
+- [Git](http://git-scm.com/)
+a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+
+#### Installation Bower
+Bower is a command line utility. Install it with npm.
+```
+npm install -g bower
+```
+
+### Usage
+Create file [bower.json](../web-client/bower.json) in folder web-client
+```json
+{
+  "name": "Angular1-Yii2",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hscstudio/angular1-yii2",
+  "description": "AngularJS 1.3 and Yii Framework 2.0",
+  "dependencies": {
+    "angular": "~1.3.0",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.3.0",
+    "angular-animate": "~1.3.0"
+  }
+}
+```
+And then create file [.bowerrc](../web-client/.bowerrc), this file contains configuration of bower, add parameter directory to specify target folder installation.
+```
+{
+  "directory": "assets"
+}
+```
+In command line, do this
+```
+cd web-client
+bower install
+```
+After installation finished, You can see folder assets have contained library angular, bootstrap, etc.
+
 ## Enhance User Interface
 
 ### Angular Animation
@@ -70,52 +117,6 @@ Also don't forget that if you want to get started and the docs are not enough, s
 ## Authorization
 
 ## Handling File Upload
-
-## Miscellaneous
-For installation `assets` (javascript and css), we can use [bower](http://bower.io). Bower is a package manager for the web. It's quite with composer in PHP.
-
-### Installation
-Before installation bower, we must install:
-- [nodeJs & npm](http://nodejs.org) 
-Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. NPM is package manager for javascript 
-- [Git](http://git-scm.com/)
-a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-
-#### Installation Bower
-Bower is a command line utility. Install it with npm.
-```
-npm install -g bower
-```
-
-### Usage
-Create file [bower.json](../web-client/bower.json) in folder web-client
-```json
-{
-  "name": "Angular1-Yii2",
-  "version": "1.0.0",
-  "homepage": "https://github.com/hscstudio/angular1-yii2",
-  "description": "AngularJS 1.3 and Yii Framework 2.0",
-  "dependencies": {
-    "angular": "~1.3.0",
-    "bootstrap": "~3.1.1",
-    "angular-route": "~1.3.0",
-    "angular-animate": "~1.3.0"
-  }
-}
-```
-And then create file [.bowerrc](../web-client/.bowerrc), this file contains configuration of bower, add parameter directory to specify target folder installation.
-```
-{
-  "directory": "assets"
-}
-```
-In command line, do this
-```
-cd web-client
-bower install
-```
-After installation finished, You can see folder assets have contained library angular, bootstrap, etc.
-
 
 ## Deploying Application
 Before we deploy our application, we need do some things.
