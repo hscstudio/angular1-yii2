@@ -29,7 +29,15 @@ Before we deploy our application, we need do some things.
 
 ### Web Client
 Read official guide for application production [click here](https://docs.angularjs.org/guide/production).
+#### Disabling Debug Data
+By default AngularJS attaches information about binding and scopes to DOM nodes, and adds CSS classes to data-bound elements, but we can disable this in production for a significant performance boost with:
+```js
+spaApp.config(['$compileProvider', function ($compileProvider) {
+  $compileProvider.debugInfoEnabled(false);
+}]);
+```
 
+#### 
 ### Web Service
 Modify file [web/index.php](../web-service/web/index.php) in web-service, set Yii_DEBUG const to be `false`, and then YII_ENV to be `prod`
 ```php
