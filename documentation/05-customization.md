@@ -14,6 +14,26 @@ https://docs.angularjs.org/api/ngAnimate<br>
 ### Flash Message
 
 ### Angular Lazy Loader
+https://oclazyload.readme.io/v1.0/docs/getting-started
+
+When we add some module, we must add include script for sub module in main. By use module ocLazyLoad we can make lazy load in angular, include only when need.
+
+- Download ocLazyLoad.js (you can install it with bower install oclazyload or npm install oclazyload) and add the file to your project.
+- Add the module oc.lazyLoad to your application:
+```js
+var myApp = angular.module("MyApp", ["oc.lazyLoad"]);
+```
+- Load on demand:
+```js
+spaApp.controller("MyCtrl", function($ocLazyLoad) {
+  $ocLazyLoad.load('testModule.js');
+});
+```
+With $ocLazyLoad you can load angular modules, but if you want to load any component (controllers / services / filters / ...) without defining a new module it's entirely possible (just make sure that you define this component within an existing module).
+
+There are multiple ways to use $ocLazyLoad to load your files, just choose the one that you prefer.
+
+Also don't forget that if you want to get started and the docs are not enough, see the examples in the 'examples' folder!
 
 ## Customize RESTful API
 
