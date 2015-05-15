@@ -4,15 +4,27 @@ To be continued... Plan is to add info about paging, upload file, security, auth
 
 You're very welcome to contribute.
 
-## Angular Animation
+## Enhance User Interface
 
-## Angular Lazy Loader
+### Angular Animation
 
-## Customize URL RESTful API
+### Flash Message
+
+### Angular Lazy Loader
+
+## Customize RESTful API
+
+### Versioning
+
+### Customize URL
+
+### Error Handling
 
 ## Authorization
 
 ## Handling File Upload
+
+
 
 ---
 
