@@ -19,12 +19,11 @@ Let's explain all these directories a bit:
 
 ### Get CSS Bootstrap
 
-Download a library from [http://getbootstrap.com/](http://getbootstrap.com/) and extract it to `assets` directory like
-the following:
+Download a library from [http://getbootstrap.com/](http://getbootstrap.com/) and extract it to `assets` directory like the following:
 
 ```
 assets
-    twitter-bootstrap
+    bootstrap
         js
         css
         font
@@ -32,12 +31,11 @@ assets
 
 ### Get AngularJs
 
-Download a library from [http://angularjs.org/](http://angularjs.org/), and extract it into `assets` directory like the
-following:
+Download a library from [http://angularjs.org/](http://angularjs.org/), and extract it into `assets` directory like the following:
 
 ```
 assets
-    twitter-bootstrap
+    bootstrap
     angular
         angular.js
         angular.min.js
