@@ -36,6 +36,21 @@ spaApp.config(['$compileProvider', function ($compileProvider) {
   $compileProvider.debugInfoEnabled(false);
 }]);
 ```
+#### Strict DI Mode
+Using strict di mode in your production application will throw errors when a injectable function is not annotated explicitly. Strict di mode is intended to help you make sure that your code will work when minified. However, it also will force you to make sure that your injectable functions are explicitly annotated which will improve angular's performance when injecting dependencies in your injectable functions because it doesn't have to dynamically discover a function's dependencies. It is recommended to automate the explicit annotation via a tool like ng-annotate when you deploy to production (and enable strict di mode)
+
+To enable strict di mode, you have two options:
+```html
+<div ng-app="spaApp" ng-strict-di>
+  <!-- your app here -->
+</div>
+```
+or
+```js
+angular.bootstrap(document, ['spaApp'], {
+  strictDi: true
+});
+```
 
 #### 
 ### Web Service
