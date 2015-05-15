@@ -1,8 +1,6 @@
 # Customization
 
-To be continued... Plan is to add info about paging, upload file, security, authentication and more.
-
-You're very welcome to contribute.
+This page still experimental. You're very welcome to contribute.
 
 ## Enhance User Interface
 
