@@ -49,6 +49,10 @@ bower install
 ```
 After installation finished, You can see folder assets have contained library angular, bootstrap, etc.
 
+### Include in Index
+Because structure folder that downloaded by bower is different, we should adjust links js and css in file [index.html](web-client2/index.html).
+ 
+
 ## Enhance User Interface
 
 ### Angular Animation
