@@ -7,6 +7,26 @@ You're very welcome to contribute.
 ## Enhance User Interface
 
 ### Angular Animation
+There are several types of animation techniques that we can apply in our angularjs application. But in this tutorial I will discuss about the animation at the turn of the page. To do that, we need the ngAnimate module to enable animations throughout the application.
+
+```
+{
+  "name": "angular1-yii2",
+  "description": "AngularJS 1.3 and Yii Framework 2.0",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hscstudio/angular1-yii2",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.3.0",
+    "angular-mocks": "~1.3.0",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.3.0",
+    "angular-resource": "~1.3.0",
+    "angular-animate": "~1.3.0"
+  }
+}
+```
 https://docs.angularjs.org/tutorial/step_12<br>
 https://docs.angularjs.org/guide/animations<br>
 https://docs.angularjs.org/api/ngAnimate<br>
