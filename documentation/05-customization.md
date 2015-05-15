@@ -16,12 +16,18 @@ https://docs.angularjs.org/api/ngAnimate<br>
 ### Angular Lazy Loader
 https://oclazyload.readme.io/v1.0/docs/getting-started
 
-When we add some module, we must add include script for sub module in main. By use module ocLazyLoad we can make lazy load in angular, include only when need.
+When we add some module, we must add include script for sub module in main. By use module ocLazyLoad we can make lazy load in angular, include only when needed.
 
 - Download ocLazyLoad.js (you can install it with bower install oclazyload or npm install oclazyload) and add the file to your project.
 - Add the module oc.lazyLoad to your application:
 ```js
-var myApp = angular.module("MyApp", ["oc.lazyLoad"]);
+var spaApp = angular.module('spaApp', [
+  'ngRoute',
+  'ngAnimate',
+  'spaApp.site',
+  'spaApp.book',
+  'oc.lazyLoad', // add this module lazyLoader
+]);
 ```
 - Load on demand:
 ```js
