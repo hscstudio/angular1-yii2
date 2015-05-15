@@ -113,6 +113,24 @@ Include css animation in [index.html](../web-client2/index.html):
 ```html
 <link rel="stylesheet" href="style.css" />
 ```
+Add class animate in ng-view
+```html
+<div id="main" class="container"> 
+	<!-- angular templating -->
+	<!-- this is where content will be injected -->
+	<div ng-view class="animate"></div>
+</div>
+```
+Include module ngAnimate in [app.js](../web-client2/app.js):
+```js
+var spaApp = angular.module('spaApp', [
+  'ngRoute',
+  'spaApp.site',
+  'spaApp.book',
+  'ngAnimate' // add module ngAnimate
+]);
+```
+
 
 For further informations, read this:
 - https://docs.angularjs.org/tutorial/step_12<br>
