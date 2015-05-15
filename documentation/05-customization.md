@@ -1,6 +1,6 @@
 # Customization
 
-This page still experimental. You're very welcome to contribute.
+This page still editing. You're very welcome to contribute.
 
 ## Miscellaneous
 For installation `assets` (javascript and css), we can use [bower](http://bower.io). Bower is a package manager for the web. It's quite with composer in PHP.
@@ -21,7 +21,7 @@ npm install -g bower
 ```
 
 ### Usage
-Create file [bower.json](../web-client/bower.json) in folder web-client
+Create file [bower.json](../web-client2/bower.json) in folder web-client
 ```json
 {
   "name": "Angular1-Yii2",
@@ -36,7 +36,7 @@ Create file [bower.json](../web-client/bower.json) in folder web-client
   }
 }
 ```
-And then create file [.bowerrc](../web-client/.bowerrc), this file contains configuration of bower, add parameter directory to specify target folder installation.
+And then create file [.bowerrc](../web-client2/.bowerrc), this file contains configuration of bower, add parameter directory to specify target folder installation.
 ```
 {
   "directory": "assets"
@@ -44,7 +44,7 @@ And then create file [.bowerrc](../web-client/.bowerrc), this file contains conf
 ```
 In command line, do this
 ```
-cd web-client
+cd web-client2
 bower install
 ```
 After installation finished, You can see folder assets have contained library angular, bootstrap, etc.
