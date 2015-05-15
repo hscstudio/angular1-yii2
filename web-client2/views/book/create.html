@@ -1,0 +1,46 @@
+<div>
+	<h1>BOOK CRUD</h1>
+	
+	<p>{{ message }}</p>
+	<form role="form" name="myForm">
+		<div class= "form-group" ng-class="{error: myForm.title.$invalid}">
+			<label> Title </label>
+			<div>
+			<input name="title" ng-model="book.title" type= "text" class= "form-control" placeholder="Title" required/>
+			<span ng-show="myForm.title.$dirty && myForm.title.$invalid" class="help-inline">Title Required</span>
+			</div>
+		</div>
+		<div class= "form-group">
+			<label> Description </label>
+			<div>
+			<textarea name="description" ng-model="book.description" class= "form-control" placeholder= "Description"></textarea>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.author.$invalid}">
+			<label> Author </label>
+			<div>
+			<input name="author" ng-model="book.author" type= "text" class= "form-control" placeholder="Author" required/>
+			<span ng-show="myForm.author.$dirty && myForm.author.$invalid" class="help-inline">Author Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.publisher.$invalid}">
+			<label> Publisher </label>
+			<div>
+			<input name="publisher" ng-model="book.publisher" type= "text" class= "form-control" placeholder="Publisher" required/>
+			<span ng-show="myForm.publisher.$dirty && myForm.publisher.$invalid" class="help-inline">Publisher Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.year.$invalid}">
+			<label> Year </label>
+			<div>
+			<input name="year" ng-model="book.year" type= "text" class= "form-control" placeholder="Year" required/>
+			<span ng-show="myForm.year.$dirty && myForm.year.$invalid" class="help-inline">Year Required</span>
+			</div>
+		</div>
+	  
+		<a href="#/book/index" class="btn btn-default">Cancel</a>
+		<button ng-click="createBook(book);" 
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
